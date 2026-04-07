@@ -6,6 +6,9 @@ import Counter from "./components/ui/Counter";
 import Hero from "./components/ui/Hero";
 import Navbar from "./components/ui/Navbar";
 import Steps from "./components/ui/Steps";
+import BestSellerCard from "./components/ui/BestSellerCard";
+import Subscribe from "./components/ui/Subscribe";
+import Footer from "./components/ui/Footer";
 
 const getProducts = async () => {
   const res = await fetch("/public/data.json");
@@ -67,6 +70,9 @@ function App() {
         )}
       </div>
       <Steps />
+      <BestSellerCard />
+      <Subscribe />
+      <Footer />
     </>
   );
 }

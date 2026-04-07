@@ -18,7 +18,7 @@ const Product = ({ product, carts, setCarts }) => {
   };
 
   return (
-    <div className="border-zinc-300 border p-4 rounded-2xl space-y-4">
+    <div className="border-zinc-300 border p-4 rounded-2xl space-y-4 flex flex-col">
       <p className="">{product.tag}</p>
       <h2 className="font-extrabold text-3xl ">{product.name}</h2>
       <p className="text-black/60">{product.description}</p>
@@ -33,7 +33,7 @@ const Product = ({ product, carts, setCarts }) => {
       </ul>
       <button
         onClick={handleBuyProduct}
-        className="btn mt-2.5 w-full font-bold text-[16px] rounded-full bg-linear-to-r from-[#4f39f6] to-purple-500 py-6 text-white"
+        className="btn mt-auto w-full font-bold text-[16px] rounded-full bg-linear-to-r from-[#4f39f6] to-purple-500 py-6 text-white"
       >
         {isBuy ? "Add to Cart" : "Buy Now"}
       </button>
