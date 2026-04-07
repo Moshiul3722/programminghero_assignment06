@@ -1,7 +1,22 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
-const Product = ({ product }) => {
+const Product = ({ product, carts, setCarts }) => {
   const [isBuy, setBuy] = useState(false);
+
+  const handleBuyProduct = () => {
+    setBuy(true);
+
+    const isFoundProduct = carts.find((item) => item.id === product.id);
+    if (isFoundProduct) {
+      toast.error("Item already in cart!");
+      return;
+    }
+
+    setCarts([...carts, product]);
+    toast.success("Item added to cart!");
+  };
+
   return (
     <div className="border-zinc-300 border p-4 rounded-2xl space-y-4">
       <p className="">{product.tag}</p>
@@ -17,7 +32,7 @@ const Product = ({ product }) => {
         ))}
       </ul>
       <button
-        onClick={() => setBuy(true)}
+        onClick={handleBuyProduct}
         className="btn mt-2.5 w-full font-bold text-[16px] rounded-full bg-linear-to-r from-[#4f39f6] to-purple-500 py-6 text-white"
       >
         {isBuy ? "Add to Cart" : "Buy Now"}

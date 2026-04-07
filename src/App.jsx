@@ -5,6 +5,7 @@ import DigitalTools from "./components/DigitalTools";
 import Counter from "./components/ui/Counter";
 import Hero from "./components/ui/Hero";
 import Navbar from "./components/ui/Navbar";
+import Steps from "./components/ui/Steps";
 
 const getProducts = async () => {
   const res = await fetch("/public/data.json");
@@ -15,10 +16,11 @@ const productPromise = getProducts();
 
 function App() {
   const [activeTab, setActiveTab] = useState("products");
-  console.log(activeTab);
+  const [carts, setCarts] = useState([]);
+  // console.log(carts);
   return (
     <>
-      <Navbar />
+      <Navbar carts={carts} />
       <Hero />
       <div className="bg-linear-to-r from-[#4f39f6] to-purple-500">
         <Counter />
@@ -42,19 +44,29 @@ function App() {
             name="product_tabs"
             className="tab rounded-full w-30"
             aria-label="Products"
+            onClick={() => setActiveTab("products")}
             defaultChecked
           />
           <input
             type="radio"
             name="product_tabs"
             className="tab rounded-full w-30"
-            aria-label="Cart"
+            aria-label={`Cart (${carts.length})`}
+            onClick={() => setActiveTab("cart")}
           />
         </div>
-
-        <DigitalTools productPromise={productPromise} />
+        {activeTab === "products" ? (
+          <DigitalTools
+            productPromise={productPromise}
+            activeTab={activeTab}
+            carts={carts}
+            setCarts={setCarts}
+          />
+        ) : (
+          <Cart carts={carts} setCarts={setCarts} />
+        )}
       </div>
-      <Cart />
+      <Steps />
     </>
   );
 }
