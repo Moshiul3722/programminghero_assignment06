@@ -4,7 +4,7 @@ import { CiPlay1 } from "react-icons/ci";
 
 const Hero = () => {
   return (
-    <div className="flex py-15 items-center w-10/12 mx-auto">
+    <div className="flex md:flex-row sm:flex-col py-15 items-center w-10/12 mx-auto">
       <div>
         <span className="rounded-full px-4 py-1 bg-[#e1e7ff]">
           New: AI-Powered Tools Available
@@ -33,8 +33,8 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      <div className="pl-15">
-        <img src={HeroImage} alt="" />
+      <div className="md:pl-15 sm:mt-6">
+        <img src={HeroImage} className="sm:w-full sm:h-auto" alt="" />
       </div>
     </div>
   );

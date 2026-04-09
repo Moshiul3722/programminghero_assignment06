@@ -12,7 +12,7 @@ const BestSellerCard = () => {
             Choose the plan that fits your needs. Upgrade or downgrade anytime.
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-8">
           <div className="border-zinc-300 border p-4 rounded-2xl space-y-4 flex flex-col">
             <h2 className="font-extrabold text-3xl ">Starter</h2>
             <p className="">Perfect for getting started</p>
