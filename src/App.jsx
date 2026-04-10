@@ -11,7 +11,7 @@ import Subscribe from "./components/ui/Subscribe";
 import Footer from "./components/ui/Footer";
 
 const getProducts = async () => {
-  const res = await fetch("/public/data.json");
+  const res = await fetch("/data.json");
   return res.json();
 };
 

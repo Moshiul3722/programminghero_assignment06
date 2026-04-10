@@ -55,7 +55,19 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <hr className="text-white" />
+      </div>
+      <hr className="border-[0.3px] border-white/20 w-10/12 mx-auto mt-12" />
+      <div className="w-10/12 mx-auto flex justify-between mt-8">
+        <div className="text-white/60 font-extralight">
+          <p>&copy; 2026 Digitools. All rights reserved.</p>
+        </div>
+        <div>
+          <ul className="flex gap-10 text-white/60 font-extralight">
+            <li>Privacy Policy</li>
+            <li>Terms of Service</li>
+            <li>Cookies</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
